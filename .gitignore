@@ -36,11 +36,14 @@ ENV/
 *.ipynb_checkpoints
 
 # Data files
-data/raw/*
 data/processed/*
-!data/raw/.gitkeep
 !data/processed/.gitkeep
 !data/models/.gitkeep
+# Allow sample data files
+!data/raw/transactions.csv
+!data/raw/sample_test_data.csv
+!data/raw/DATA_DESCRIPTION.md
+!data/raw/.gitkeep
 
 # Model files
 *.pkl

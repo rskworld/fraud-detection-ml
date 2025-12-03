@@ -1,0 +1,68 @@
+# Fraud Detection ML Project Configuration
+# Developer: Molla Samser (Founder) - https://rskworld.in
+# Designer & Tester: Rima Khatun
+# Email: help@rskworld.in, support@rskworld.in
+# Phone: +91 93305 39277
+# Location: Nutanhat, Mongolkote, Purba Burdwan, West Bengal, India, 713147
+# Copyright © 2025 RSK World. All rights reserved.
+
+# Data paths
+data:
+  raw_data_path: "./data/raw/"
+  processed_data_path: "./data/processed/"
+  model_path: "./data/models/"
+
+# Model configuration
+model:
+  type: "ensemble"  # Options: random_forest, xgboost, neural_network, ensemble
+  threshold: 0.5
+  hyperparameter_tuning: false
+
+# Random Forest parameters
+random_forest:
+  n_estimators: 100
+  max_depth: 20
+  min_samples_split: 5
+  class_weight: "balanced"
+
+# XGBoost parameters
+xgboost:
+  n_estimators: 200
+  max_depth: 6
+  learning_rate: 0.1
+  scale_pos_weight: 1
+
+# Neural Network parameters
+neural_network:
+  layers: [128, 64, 32]
+  dropout: 0.3
+  batch_size: 32
+  epochs: 100
+  learning_rate: 0.001
+
+# Preprocessing
+preprocessing:
+  test_size: 0.2
+  random_state: 42
+  remove_outliers: false
+  scale_features: true
+
+# Feature engineering
+feature_engineering:
+  select_features: true
+  n_features: 50
+  use_pca: false
+  pca_components: 0.95
+
+# API configuration
+api:
+  host: "0.0.0.0"
+  port: 5000
+  debug: true
+
+# Evaluation
+evaluation:
+  save_plots: true
+  plot_dir: "./plots/"
+  metrics: ["accuracy", "precision", "recall", "f1_score", "roc_auc"]
+
